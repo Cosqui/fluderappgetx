@@ -2,6 +2,7 @@
 
 import 'package:app_getx/controller/controller.dart';
 import 'package:app_getx/models/restaurant.dart';
+import 'package:app_getx/pages/restaurante_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,6 +36,11 @@ class ReviewsRestaurante extends StatelessWidget{
    RestaurantModel instance = args[0]['restaurante'];
    return SliverAppBar(
       automaticallyImplyLeading: false,
+      leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black), 
+          onPressed: (){
+            Get.to(()=> RestaurantePage());
+      }),
       elevation: 2.0,
       expandedHeight: 250.0,
       floating: false,
@@ -71,7 +77,7 @@ Widget _cardReviews(BuildContext context, RestaurantModel instance) {
                 width: 200.0,
                 child:  GestureDetector(
                   child:Padding(
-                    padding:EdgeInsets.all(8.0),
+                    padding:const EdgeInsets.all(8.0),
                     child:Card(
                       //color: ,
                       child:Container(
@@ -84,7 +90,7 @@ Widget _cardReviews(BuildContext context, RestaurantModel instance) {
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
+                                children:const <Widget>[
                                   Icon( Icons.reviews, color: Colors.black, size: 40.0,),
                                  
                                 ],
@@ -97,7 +103,7 @@ Widget _cardReviews(BuildContext context, RestaurantModel instance) {
                               children: <Widget>[
                                 Padding(
                                     padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-                                    child: Text("Comentarios:", style: TextStyle(color: Colors.grey,fontSize: 14.0),),
+                                    child:const Text("Comentarios:", style: TextStyle(color: Colors.grey,fontSize: 14.0),),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),

@@ -13,14 +13,17 @@ class RestaturantProvider {
   Future <List<RestaurantModel>> getRestaurantesAlls () async {
    
      
-      final response = await http.get(Uri.parse("https://tellurium.behuns.com/api/restaurants/"));
+       final response = await http.get(Uri.parse("https://tellurium.behuns.com/api/restaurants/"));
    
       final List<dynamic>  decodedata =  convert.jsonDecode(response.body);
       
       return decodedata.map((e) => 
       RestaurantModel.fromJson(e)).toList();
+       
+     
       
-      }
+      
+  }
       
      
    
